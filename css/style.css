@@ -1,0 +1,9 @@
+/* Custom styles for Thanseemnasar Portfolio */
+body {
+    background-color: #020617;
+    color: #f8fafc;
+}
+::selection {
+    background-color: #34d399;
+    color: #020617;
+}
