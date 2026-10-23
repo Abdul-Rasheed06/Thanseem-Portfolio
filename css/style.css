@@ -7,3 +7,18 @@ body {
     background-color: #34d399;
     color: #020617;
 }
+
+
+/* Profile portrait: keeps the headshot polished and aligned with the hero card. */
+.profile-photo {
+    flex-shrink: 0;
+    background: #f8fafc;
+    object-position: center 18%;
+}
+
+@media (max-width: 420px) {
+    .profile-photo {
+        width: 68px;
+        height: 82px;
+    }
+}
