@@ -1,24 +1,93 @@
-/* Custom styles for Thanseemnasar Portfolio */
+/* Thanseemnasar Portfolio — requested navy blue + warm white palette */
+:root {
+  --portfolio-blue: #0B1957;
+  --portfolio-white: #F8F3EA;
+  --portfolio-blue-light: #13245F;
+  --portfolio-border: rgba(248, 243, 234, 0.22);
+}
+html { scroll-behavior: smooth; }
 body {
-    background-color: #020617;
-    color: #f8fafc;
+  background: var(--portfolio-blue) !important;
+  color: var(--portfolio-white) !important;
 }
-::selection {
-    background-color: #34d399;
-    color: #020617;
+/* Keep the whole design within the requested blue-and-white combination. */
+.bg-slate-950, .bg-slate-950\/50, .bg-slate-950\/80,
+.bg-slate-900, .bg-slate-900\/80, .bg-slate-800 {
+  background-color: var(--portfolio-blue-light) !important;
 }
-
-
-/* Profile portrait: keeps the headshot polished and aligned with the hero card. */
+.border-slate-800, .border-slate-800\/60, .border-slate-800\/80,
+.border-slate-700, .border-slate-700\/50 {
+  border-color: var(--portfolio-border) !important;
+}
+.text-slate-100, .text-slate-200, .text-slate-300, .text-slate-400,
+.text-slate-500, .text-slate-600, .text-white {
+  color: var(--portfolio-white) !important;
+}
+/* Replace green/teal accent text with the warm white from the reference palette. */
+.text-emerald-300, .text-emerald-400, .text-emerald-500,
+.text-teal-300, .text-teal-400, .text-cyan-400,
+.hover\:text-emerald-400:hover {
+  color: var(--portfolio-white) !important;
+}
+/* Buttons, labels, icons and decorative gradients use the same blue/white palette. */
+.bg-emerald-500, .bg-emerald-400, .bg-teal-500,
+.from-emerald-500, .to-teal-600, .from-emerald-400,
+.to-cyan-500 {
+  background-color: var(--portfolio-white) !important;
+  background-image: none !important;
+  color: var(--portfolio-blue) !important;
+}
+a.bg-gradient-to-r, a.bg-gradient-to-r span, a.bg-gradient-to-r i {
+  color: var(--portfolio-blue) !important;
+}
+.hover\:border-emerald-500:hover, .hover\:border-emerald-500\/50:hover {
+  border-color: var(--portfolio-white) !important;
+}
+.shadow-emerald-500\/20 { --tw-shadow-color: rgba(248, 243, 234, 0.12) !important; }
+::selection { background: var(--portfolio-white); color: var(--portfolio-blue); }
 .profile-photo {
-    flex-shrink: 0;
-    background: #f8fafc;
-    object-position: center 18%;
+  display: block;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center 18%;
+  background: var(--portfolio-white);
+}
+@media (max-width: 420px) {
+  .profile-photo { width: 68px; height: 82px; }
 }
 
-@media (max-width: 420px) {
-    .profile-photo {
-        width: 68px;
-        height: 82px;
-    }
+/* Final requested contrast fix: make the brand name and hero-highlight pure warm white. */
+header > div > a:first-child {
+  background: none !important;
+  background-image: none !important;
+  color: var(--portfolio-white) !important;
+  -webkit-text-fill-color: var(--portfolio-white) !important;
+}
+.hero-title-highlight,
+h1 span.bg-gradient-to-r {
+  background: none !important;
+  background-image: none !important;
+  color: var(--portfolio-white) !important;
+  -webkit-text-fill-color: var(--portfolio-white) !important;
+  text-shadow: none !important;
+}
+
+
+/* High-specificity + inline-safe overrides for the two requested white text elements. */
+html body header a:first-child, html body header a:first-child * {
+  color: #F8F3EA !important;
+  -webkit-text-fill-color: #F8F3EA !important;
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+html body h1 .hero-title-highlight, html body h1 span.hero-title-highlight {
+  color: #F8F3EA !important;
+  -webkit-text-fill-color: #F8F3EA !important;
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  text-shadow: none !important;
 }
